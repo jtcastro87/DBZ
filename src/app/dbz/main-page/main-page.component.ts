@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { personajes } from '../interface/dbz.interface';
 
 @Component({
   selector: 'app-main-page',
@@ -7,8 +8,32 @@ import { Component } from '@angular/core';
 })
 export class MainPageComponent  {
 
- agregarPersonaje(evento:any){
-  console.log("hola");
-  evento.preventDefault();
+    arrPersonajes:personajes[] =[
+    {
+      nombre: 'Pikolo',
+      poder: 12700
+    },
+    {
+      nombre: 'Bulma',
+      poder: 1
+    }
+  ]
+
+  nuevoPersonaje:personajes={
+    nombre: "",
+    poder: 0
+  }
+
+ agregarPersonaje():void {
+
+    if(this.nuevoPersonaje.nombre.trim().length === 0)
+      return;
+    this.arrPersonajes.push(this.nuevoPersonaje);
+    this.nuevoPersonaje = {
+      nombre: '',
+      poder: 0
+    }
+
  }
+
 }
