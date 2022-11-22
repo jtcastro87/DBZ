@@ -24,16 +24,12 @@ export class MainPageComponent  {
     poder: 0
   }
 
- agregarPersonaje():void {
+  agregarPersonaje(personaje:personajes){
+    this.arrPersonajes.push(personaje);
+  }
 
-    if(this.nuevoPersonaje.nombre.trim().length === 0)
-      return;
-    this.arrPersonajes.push(this.nuevoPersonaje);
-    this.nuevoPersonaje = {
-      nombre: '',
-      poder: 0
-    }
 
- }
+
+
 
 }

@@ -6,23 +6,9 @@
       <app-personajes [personajesChild]="arrPersonajes"></app-personajes>
     </div>
     <div class="col">
-        <h3>Agregar</h3>
-        <hr>
-        <form (ngSubmit)="agregarPersonaje()" >
-            <input
-              [(ngModel)]="nuevoPersonaje.nombre"
-              type="text"
-              name="nombre"
-              placeholder="Nombre" >
-
-            <input
-              [(ngModel)]="nuevoPersonaje.poder"
-              type="number"
-              name="poder"
-              placeholder="Poder" >
-
-            <button type="submit" class="add">Agregar</button>
-        </form>
+        <app-agregar
+          [nuevoPersonaje]="nuevoPersonaje"
+          (onNuevoPersonaje)="agregarPersonaje($event)"></app-agregar>
     </div>
 
 </div>
